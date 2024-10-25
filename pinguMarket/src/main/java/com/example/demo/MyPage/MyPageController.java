@@ -33,6 +33,7 @@ public class MyPageController {
 //		List<Payment> p = this.ps.getPayment(2);
 //		model.addAttribute("payment", p);
 		return "Mypage/myorder";
+		
 	}
 	
 //	@PreAuthorize("isAuthenticated()")
