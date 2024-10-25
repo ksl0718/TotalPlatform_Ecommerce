@@ -27,12 +27,12 @@ public class ProductService {
 		return this.pr.findByProductIdIn(productIdList);
 	}
 
-	public Product getProduct(Integer productId) throws NotFoundException{
+	public Product getProduct(Integer productId) throws CanNotFoundException{
 		Optional<Product> p1 = this.pr.findById(productId);
 		if(p1.isPresent()) {
 			return p1.get();
 		} else {
-			throw new NotFoundException("데이터를 찾을 수 없습니다.");
+			throw new CanNotFoundException("데이터를 찾을 수 없습니다.");
 		}
 	}
   

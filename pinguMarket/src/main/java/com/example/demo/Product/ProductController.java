@@ -11,6 +11,7 @@ import com.example.demo.Cart.CartService;
 import com.example.demo.Entity.Cart;
 import com.example.demo.Entity.Product;
 import com.example.demo.Product.ProductService;
+import com.example.demo.Review.CanNotFoundException;
 import com.example.demo.Entity.User;
 import com.example.demo.User.UserService;
 import com.example.demo.Admin.Product.AdminProductService;
@@ -25,7 +26,7 @@ public class ProductController {
 	private final CartService carts;
 	private final UserService us;
 	private final ProductService ps;
-  private final AdminProductService aps;
+    private final AdminProductService aps;
 	
 	
 //	---------------------------------------------장바구니----------------------------------------------------------------------------------------------
@@ -48,7 +49,7 @@ public class ProductController {
   
 	
 	@GetMapping("/product/{productId}") //상품상세페이지
-    public String ProductDetail(Model model, @PathVariable("productId") Integer productId) {
+    public String ProductDetail(Model model, @PathVariable("productId") Integer productId) throws CanNotFoundException {
 		//product_id로 조회해서 가져오기
 		Product p = this.ps.getProduct(productId);
         model.addAttribute("p", p);
