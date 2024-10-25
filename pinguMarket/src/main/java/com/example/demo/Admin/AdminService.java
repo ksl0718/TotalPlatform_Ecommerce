@@ -15,11 +15,13 @@ import com.example.demo.Entity.CsQuestion;
 import com.example.demo.CsAnswer.CsAnswerRepository;
 import com.example.demo.CsQuestion.CsQuestionRepository;
 import com.example.demo.Entity.CsAnswer;
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
 public class AdminService {
+
 	private final CsQuestionRepository cqr;
 	private final CsAnswerRepository car;
 	
@@ -76,3 +78,4 @@ public void answerUpdate(String title, String contents, Integer id) {
 	
 
 }
+
