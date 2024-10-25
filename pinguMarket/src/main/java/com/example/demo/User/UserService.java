@@ -6,23 +6,41 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.User;
 
+import com.example.demo.Review.CanNotFoundException;
+
+
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
+
 	
 	private final UserRepository ur;
 	
-	//예외처리 : 존재하지 않는 유저
-		public User getUser(String userId) throws nosignException {
-			Optional<User> user = this.ur.findByUserId(userId);
-			if(user.isPresent()) {
-				return user.get();
-			}
-			else {
-				throw new nosignException("존재하지 않는 유저입니다");
-			}
-		}
 
+
+	private final UserRepository ur;
+	
+	public User getUser(String userId) throws CanNotFoundException {
+		Optional<User> user = this.ur.findById(userId);
+		if(user.isPresent()) {
+			return user.get();
+		}
+		else {
+			throw new CanNotFoundException("존재하지 않는 유저입니다");
+		}
+	}
+
+	public User getUser(Integer id) throws CanNotFoundException {
+		Optional<User> user = this.ur.findById(id);
+		if(user.isPresent()) {
+			return user.get();
+		}
+		else {
+			throw new CanNotFoundException("존재하지 않는 유저입니다");
+		}
+	}
+//	로그인 기능이 없어서 String이 아니라 Integer를 사용하여 땜빵용
+	
 }

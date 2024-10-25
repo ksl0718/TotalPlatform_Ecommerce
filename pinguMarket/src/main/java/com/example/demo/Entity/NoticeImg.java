@@ -1,5 +1,7 @@
 package com.example.demo.Entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,21 +15,19 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "product_img")
-public class ProductImg {
+@Table(name = "notice_img")
+public class NoticeImg {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer productImgId;
+	private Integer noticeImgId;
 	
 	@ManyToOne
-	@JoinColumn(name = "product_id")
-	private Product product;
+	@JoinColumn(name = "notice_id")
+	private Notice notice;
 	
 	@ManyToOne
 	@JoinColumn(name = "image_id")
 	private Image image;
-	
-	private String imgType;
 
 }

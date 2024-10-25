@@ -37,7 +37,7 @@ public class Payment {
 	private LocalDateTime createDate;
 	
 	private String deliveryno;
-  
+
 	private String address;
 	
 	private String name;
@@ -45,6 +45,8 @@ public class Payment {
 	private String tell;
 	
 	private String paymentState;
+	
+	private String deliveryState;
 	
 	@OneToMany(mappedBy = "payment", cascade = CascadeType.PERSIST)
 	private List<PaymentDetail> paymentDetailList;

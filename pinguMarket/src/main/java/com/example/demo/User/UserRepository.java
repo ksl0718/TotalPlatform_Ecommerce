@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.Entity.User;
 
+
 //public interface UserRepository extends JpaRepository<User, Integer>{
 //	Optional<User> findByUserId(String userId);
 //}
@@ -15,3 +16,4 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	Optional<User> findById(String username);
 	Optional<User> findByUserId(Integer userId);
 }
+
