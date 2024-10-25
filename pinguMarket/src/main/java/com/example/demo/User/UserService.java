@@ -17,7 +17,6 @@ public class UserService {
 
 	
 	private final UserRepository ur;
-
 	
 	public User getUser(String userId) throws CanNotFoundException {
 		Optional<User> user = this.ur.findById(userId);
