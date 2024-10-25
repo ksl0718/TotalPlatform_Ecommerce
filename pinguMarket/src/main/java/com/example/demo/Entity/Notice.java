@@ -1,9 +1,13 @@
 package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
+
+
+
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,4 +42,5 @@ public class Notice {
 	@OneToMany(mappedBy = "notice", cascade = CascadeType.REMOVE)
 	private List<NoticeImg> noticeImgList;
 	
+
 }

@@ -5,13 +5,20 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.User;
+
 import com.example.demo.Review.CanNotFoundException;
+
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
+
+	
+	private final UserRepository ur;
+	
+
 
 	private final UserRepository ur;
 	
@@ -34,6 +41,6 @@ public class UserService {
 			throw new CanNotFoundException("존재하지 않는 유저입니다");
 		}
 	}
-//	로그인 기능이 없어서 땜빵용으로 사용
+//	로그인 기능이 없어서 String이 아니라 Integer를 사용하여 땜빵용
 	
 }

@@ -36,5 +36,7 @@ public class CsAnswer {
 	private String contents;
 	
 	private LocalDateTime updateDate;
+	
+
 
 }

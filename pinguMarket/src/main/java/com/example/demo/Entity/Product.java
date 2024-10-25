@@ -3,6 +3,8 @@ package com.example.demo.Entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,9 @@ public class Product {
 	
 	private Integer price;
 	
+	private Integer amount; //수량
+	
+	
 	private String cancelYn;
 	
 	private LocalDateTime updateDate;
@@ -38,4 +43,7 @@ public class Product {
 	
 	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
 	private List<Review> reviewList;
+	
+	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+	private List<Cart> cartList;
 }
