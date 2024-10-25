@@ -37,11 +37,7 @@ public class Payment {
 	private LocalDateTime createDate;
 	
 	private String deliveryno;
-	
-	private String returnState;
-	
-	private String changeState;
-	
+			
 	private String address;
 	
 	private String name;

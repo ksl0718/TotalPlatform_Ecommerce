@@ -2,6 +2,7 @@ package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,20 +18,21 @@ import lombok.Setter;
 @Entity
 @Table(name = "cart")
 public class Cart {
-	
+	 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User user;
+	private User user; // 회원
 	
 	@ManyToOne
 	@JoinColumn(name = "product_id")
-	private Product product;
+	private Product product; // 제품
 	
-	private Integer productCount;
+	@Column(name = "product_count", nullable = false)
+	private Integer productCount; // 수량
 	
 	private LocalDateTime updateDate;
 
