@@ -43,4 +43,7 @@ public class Product {
 	
 	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
 	private List<Review> reviewList;
+	
+	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+	private List<Cart> cartList;
 }
