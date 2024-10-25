@@ -1,5 +1,7 @@
 package com.example.demo.Entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,5 +25,11 @@ public class Notice {
 	@ManyToOne
 	@JoinColumn(name = "admin_id")
 	private Admin admin;
+	
+	private String title;
+	
+	private String contents;
+	
+	private LocalDateTime updateDate;
 	
 }

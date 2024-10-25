@@ -38,10 +38,6 @@ public class Payment {
 	
 	private String deliveryno;
 	
-	private String returnState;
-	
-	private String changeState;
-	
 	private String address;
 	
 	private String name;

@@ -3,6 +3,8 @@ package com.example.demo.Entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +30,9 @@ public class Product {
 	private String category;
 	
 	private Integer price;
+	
+	private Integer amount; //수량
+	
 	
 	private String cancelYn;
 	
